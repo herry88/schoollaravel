@@ -11,6 +11,15 @@
         </div>
         <h2 class="section-title">Data Jurusan</h2>
         <div class="section-body">
+            @if (session('status'))
+                <div class="row">
+                    <div class="col-12">
+                        <div class="alert alert-success">
+                            <b>Pesan</b> : {{ session('status') }}
+                        </div>
+                    </div>
+                </div>
+            @endif
             <div class="card">
                 <div class="card-header">
                     <a href="{{ route('jurusan.create') }}" class="btn btn-primary">Tambah Data</a>
@@ -34,7 +43,7 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $item->kode_jurusan }}</td>
                                         <td>{{ $item->nama_jurusan }}</td>
-                                        <td>{{ $item->kode_fakultas }}</td>
+                                        <td>{{ $item->fakultas->nama_fakultas }}</td>
                                         <td>{{ $item->jenjang }}</td>
                                         <td>&nbsp;</td>
                                     </tr>

@@ -41,7 +41,20 @@ class JurusanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //validate
+        $request->validate([
+            'kode_jurusan'=>'required|min:4',
+            'nama_jurusan'=>'required'
+        ]);
+        $jurusan = new Jurusan();
+        $jurusan->create($request->all());
+        //logika redirect
+        if ($jurusan) {
+           return redirect()->route('jurusan.index')->with('status','Data Berhasil Di simpan');
+        }else{
+            return redirect()->back()->with('errors','Data gagal Disimpan');
+        }
+
     }
 
     /**
