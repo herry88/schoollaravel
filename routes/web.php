@@ -32,7 +32,7 @@ Route::get('product',[BelajarController::class,'product']);
 // Route::get('belajar',[\App\Http\Controllers\BelajarController::class,'index']);
 // Route::resource('belajar', BelajarController::class);
 
-Route::group(['prefix'=>'admin'], function(){
+Route::group(['prefix'=>'admin','middleware'=>'auth'], function(){
 //dosen
 Route::resource('dosen', DosenController::class);
 Route::get('dosen/destroy/{id}',[DosenController::class,'destroy'])->name('dosen.destroy');
@@ -43,3 +43,7 @@ Route::resource('fakultas',FakultasController::class);
 //jurusan
 Route::resource('jurusan', JurusanController::class);
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
