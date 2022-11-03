@@ -17,6 +17,7 @@ return new class extends Migration
             // $table->id();
             $table->string('kode_ruangan')->primary();
             $table->string('nama_ruangan', 100)->nullable();
+
             $table->timestamps();
         });
     }

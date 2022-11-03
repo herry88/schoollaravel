@@ -15,6 +15,7 @@ class JadwalKuliahController extends Controller
     public function index()
     {
         //
+        return view('jadwalkuliah.index');
     }
 
     /**

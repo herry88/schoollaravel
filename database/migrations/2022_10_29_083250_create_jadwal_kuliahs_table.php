@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('jadwal_kuliahs', function (Blueprint $table) {
             $table->id();
+            $table->string('nidn')->nullable();
+            $table->string('kode_jurusan')->nullable();
+            $table->string('jam', 40);
             $table->timestamps();
         });
     }

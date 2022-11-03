@@ -18,12 +18,16 @@
                     <span>Data Fakultas</span></a>
             </li>
             <li class="active">
-                <a class="nav-link" href="{{ route('fakultas.index') }}"><i class="fas fa-square"></i>
+                <a class="nav-link" href="{{ route('jurusan.index') }}"><i class="fas fa-square"></i>
                     <span>Data Jurusan</span></a>
             </li>
             <li class="active">
                 <a class="nav-link" href="{{ route('dosen.index') }}"><i class="fas fa-square"></i>
                     <span>Data Dosen</span></a>
+            </li>
+            <li class="active">
+                <a class="nav-link" href="#"><i class="fas fa-square"></i>
+                    <span>Jadwal Kuliah</span></a>
             </li>
 
         </ul>

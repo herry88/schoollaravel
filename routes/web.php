@@ -3,6 +3,7 @@
 use App\Http\Controllers\BelajarController;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\FakultasController;
+use App\Http\Controllers\JadwalKuliahController;
 use App\Http\Controllers\JurusanController;
 use Illuminate\Support\Facades\Route;
 
@@ -44,6 +45,8 @@ Route::resource('fakultas',FakultasController::class);
 
 //jurusan
 Route::resource('jurusan', JurusanController::class);
+
+Route::resource('jadwalkuliah',JadwalKuliahController::class);
 });
 
 Route::group(['prefix'=>'dosen','middleware'=>'auth','dosen'], function(){
